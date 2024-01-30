@@ -7,6 +7,11 @@ test("equality matchers", () => {
   expect(4-2).not.toBe(1);
 })
 
+// .toBeCloseTo(number, numDigits?)
+test('adding works sanely with decimals', () => {
+  expect(0.2 + 0.1).toBeCloseTo(0.3, 5);
+});
+
 // Truthiness (.toBeNull && toBeTruthy)
 test("truthy operators", () => {
   let name ="Software testing help"
