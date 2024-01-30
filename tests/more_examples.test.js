@@ -41,7 +41,7 @@ test("numeric operators", () => {
   expect(num3).toBeGreaterThanOrEqual(0)
 })
 
-// .toMatch
+// .toMatch(regexp | string)
 test("string matchers",() => {
   let string1 = "software testing help"
   // test for success match
@@ -168,4 +168,85 @@ test('carObject has the expected properties', () => {
   expect(carObject).toHaveProperty('start');
   // Optionally, you can check if 'start' is a function
   expect(typeof carObject.start).toBe('function');
+});
+
+// .toBeDefined()
+test('exampleObject properties are defined', () => {
+  const exampleObject = {
+    property1: 'Hello'
+  };
+  // Assert that property1 is defined
+  expect(exampleObject.property1).toBeDefined();
+});
+
+// .toBeUndefined()
+test('expecting undefined to be undefined', () => {
+  expect(undefined).toBeUndefined();
+})
+
+// .toBeFalsy()
+test('falsyExample properties are falsy', () => {
+  const falsyExample = {
+    falsyProperty: 0,
+    truthyProperty: 'Hello'
+  };
+  // Assert that falsyProperty is falsy
+  expect(falsyExample.falsyProperty).toBeFalsy();
+
+  // Assert that truthyProperty is not falsy (truthy)
+  expect(falsyExample.truthyProperty).not.toBeFalsy();
+});
+
+// .toBeInstanceOf(Class)
+test('isIntance of a class', () => {
+  class A {}
+
+  expect(new A()).toBeInstanceOf(A);
+  expect(() => {}).toBeInstanceOf(Function);
+});
+
+// .toBeNaN()
+test('passes when value is NaN', () => {
+  expect(NaN).toBeNaN();
+  expect(1).not.toBeNaN();
+});
+
+// .toContain(item)
+test('arrayExample contains specific items', () => {
+  const arrayExample = ['apple', 'banana', 'orange'];
+  // Assert that the arrayExample includes 'banana'
+  expect(arrayExample).toContain('banana');
+
+  expect(arrayExample).not.toContain('kiwi');
+});
+
+// .toEqual(value)
+test('2 variables are equal', () => {
+  const number1 = 10;
+  const number2 = number1;
+  expect(number1).toEqual(number2);
+})
+
+// .toStrictEqual(value)
+class LaCroix {
+  constructor(flavor) {
+    this.flavor = flavor;
+  }
+}
+
+describe('the La Croix cans on my desk', () => {
+  test('are not semantically the same', () => {
+    expect(new LaCroix('lemon')).toEqual({flavor: 'lemon'});
+    expect(new LaCroix('lemon')).not.toStrictEqual({flavor: 'lemon'});
+  });
+});
+
+// .toThrow(error?)
+function throwErrorExample() {
+  throw new Error('This is a custom error message');
+}
+
+test('throwErrorExample throws an error', () => {
+  // Assert that throwErrorExample throws an error
+  expect(() => throwErrorExample()).toThrow();
 });
