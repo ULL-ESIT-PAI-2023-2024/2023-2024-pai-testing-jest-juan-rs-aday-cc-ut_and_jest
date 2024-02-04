@@ -1,124 +1,124 @@
 import { BankAccount, valueError } from './bank-account';
 
-describe('Bank Account', () => {
-  test('newly opened account has zero balance', () => {
-    const account = new BankAccount();
-    account.open();
-    expect(account.balance).toEqual(0);
+describe('Bank account', () => {
+  test('newly opened ACCOUNT has zero balance', () => {
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    expect(ACCOUNT.balance).toEqual(0);
   });
 
   test('can deposit money', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(100);
-    expect(account.balance).toEqual(100);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(100);
+    expect(ACCOUNT.balance).toEqual(100);
   });
 
   test('can deposit money sequentially', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(100);
-    account.deposit(50);
-    expect(account.balance).toEqual(150);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(100);
+    ACCOUNT.deposit(50);
+    expect(ACCOUNT.balance).toEqual(150);
   });
 
   test('can withdraw money', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(100);
-    account.withdraw(50);
-    expect(account.balance).toEqual(50);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(100);
+    ACCOUNT.withdraw(50);
+    expect(ACCOUNT.balance).toEqual(50);
   });
 
   test('can withdraw money sequentially', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(100);
-    account.withdraw(20);
-    account.withdraw(80);
-    expect(account.balance).toEqual(0);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(100);
+    ACCOUNT.withdraw(20);
+    ACCOUNT.withdraw(80);
+    expect(ACCOUNT.balance).toEqual(0);
   });
 
   test('checking balance of closed account throws error', () => {
-    const account = new BankAccount();
-    account.open();
-    account.close();
-    expect(() => account.balance).toThrow(valueError);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.close();
+    expect(() => ACCOUNT.balance).toThrow(valueError);
   });
 
   test('deposit into closed account throws error', () => {
-    const account = new BankAccount();
-    account.open();
-    account.close();
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.close();
     expect(() => {
-      account.deposit(50);
+      ACCOUNT.deposit(50);
     }).toThrow(valueError);
   });
 
   test('withdraw from closed account throws error', () => {
-    const account = new BankAccount();
-    account.open();
-    account.close();
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.close();
     expect(() => {
-      account.withdraw(50);
+      ACCOUNT.withdraw(50);
     }).toThrow(valueError);
   });
 
   test('close already closed account throws error', () => {
-    const account = new BankAccount();
+    const ACCOUNT = new BankAccount();
     expect(() => {
-      account.close();
+      ACCOUNT.close();
     }).toThrow(valueError);
   });
 
   test('open already opened account throws error', () => {
-    const account = new BankAccount();
-    account.open();
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
     expect(() => {
-      account.open();
+      ACCOUNT.open();
     }).toThrow(valueError);
   });
 
   test('reopened account does not retain balance', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(50);
-    account.close();
-    account.open();
-    expect(account.balance).toEqual(0);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(50);
+    ACCOUNT.close();
+    ACCOUNT.open();
+    expect(ACCOUNT.balance).toEqual(0);
   });
 
   test('cannot withdraw more than deposited', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(25);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(25);
     expect(() => {
-      account.withdraw(50);
+      ACCOUNT.withdraw(50);
     }).toThrow(valueError);
   });
 
   test('cannot withdraw negative amount', () => {
-    const account = new BankAccount();
-    account.open();
-    account.deposit(100);
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
+    ACCOUNT.deposit(100);
     expect(() => {
-      account.withdraw(-50);
+      ACCOUNT.withdraw(-50);
     }).toThrow(valueError);
   });
 
   test('cannot deposit negative amount', () => {
-    const account = new BankAccount();
-    account.open();
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
     expect(() => {
-      account.deposit(-50);
+      ACCOUNT.deposit(-50);
     }).toThrow(valueError);
   });
 
   test('changing balance directly throws error', () => {
-    const account = new BankAccount();
-    account.open();
+    const ACCOUNT = new BankAccount();
+    ACCOUNT.open();
     expect(() => {
-      account.balance = 100;
+      ACCOUNT.balance = 100;
     }).toThrow(Error);
   });
 });

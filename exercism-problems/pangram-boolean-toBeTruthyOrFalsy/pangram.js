@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @brief Returns true if the given sentence is a pangram.
  * @param {string} sentence The sentence to check.

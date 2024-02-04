@@ -23,8 +23,8 @@ describe('front door response', () => {
       'Reveling in the freedom of lazy days.',
     ];
 
-    const expectedLetters = ['S', 'U', 'M', 'M', 'E', 'R'];
-    expect(recite(SUMMER, frontDoorResponse)).toStrictEqual(expectedLetters);
+    const EXPECTED_LETTERS = ['S', 'U', 'M', 'M', 'E', 'R'];
+    expect(recite(SUMMER, frontDoorResponse)).toStrictEqual(EXPECTED_LETTERS);
   });
 
   test('should take the first characters from SOPHIA', () => {
@@ -38,8 +38,8 @@ describe('front door response', () => {
       'Alluring, so attractive',
     ];
 
-    const expectedLetters = ['S', 'O', 'P', 'H', 'I', 'A'];
-    expect(recite(SOPHIA, frontDoorResponse)).toStrictEqual(expectedLetters);
+    const EXPECTED_LETTERS = ['S', 'O', 'P', 'H', 'I', 'A'];
+    expect(recite(SOPHIA, frontDoorResponse)).toStrictEqual(EXPECTED_LETTERS);
   });
 
   test('should take the first characters from CODE', () => {
@@ -51,8 +51,8 @@ describe('front door response', () => {
       'Exit with zero quick',
     ];
 
-    const expectedLetters = ['C', 'O', 'D', 'E'];
-    expect(recite(CODE_WORK, frontDoorResponse)).toStrictEqual(expectedLetters);
+    const EXPECTED_LETTERS = ['C', 'O', 'D', 'E'];
+    expect(recite(CODE_WORK, frontDoorResponse)).toStrictEqual(EXPECTED_LETTERS);
   });
 });
 
@@ -80,9 +80,9 @@ describe('back door response', () => {
       'Exit with zero quick',
     ];
 
-    const actualLetters = recite(CODE_WORK, backDoorResponse);
-    const expectedLetters = ['w', 'o', 'r', 'k'];
-    expect(actualLetters).toStrictEqual(expectedLetters);
+    const ACTUAL_LETTERS = recite(CODE_WORK, backDoorResponse);
+    const EXPECTED_LETTERS = ['w', 'o', 'r', 'k'];
+    expect(ACTUAL_LETTERS).toStrictEqual(EXPECTED_LETTERS);
   });
 
   test('should ignore whitespace when taking the last letter character of each line of SHIRE_HORSE_WITH_SPACES', () => {
@@ -96,9 +96,9 @@ describe('back door response', () => {
       'Eager to leave\n\n',
     ];
 
-    const actualLetters = recite(SHIRE_HORSE_WITH_SPACES, backDoorResponse);
-    const expectedLetters = ['h', 'o', 'r', 's', 'e'];
-    expect(actualLetters).toStrictEqual(expectedLetters);
+    const ACTUAL_LETTERS = recite(SHIRE_HORSE_WITH_SPACES, backDoorResponse);
+    const EXPECTED_LETTERS = ['h', 'o', 'r', 's', 'e'];
+    expect(ACTUAL_LETTERS).toStrictEqual(EXPECTED_LETTERS);
   });
 });
 

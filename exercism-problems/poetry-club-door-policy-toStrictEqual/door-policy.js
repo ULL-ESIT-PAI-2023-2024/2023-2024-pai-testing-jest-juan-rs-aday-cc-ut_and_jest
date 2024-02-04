@@ -19,6 +19,8 @@
 //
 // Good luck with that door policy!
 
+'use strict';
+
 /**
  * @desc Respond with the correct character, given the line of the
  * poem, if this were said at the front door.

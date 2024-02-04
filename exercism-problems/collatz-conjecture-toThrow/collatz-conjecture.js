@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @brief Returns the number of steps it takes to reach 1 using the Collatz Conjecture.
  * @param {number} number The number to start with.

@@ -34,17 +34,17 @@ describe('task 2', () => {
 
 describe('task 3', () => {
   test('order from grocer passes callback function arguments forward', () => {
-    const query = { variety: 'apple', quantity: 10 };
-    orderFromGrocer(query, onSuccess, onError);
+    const QUERY = { variety: 'apple', quantity: 10 };
+    orderFromGrocer(QUERY, onSuccess, onError);
     expect(order).toHaveBeenCalledTimes(1);
-    expect(order).toHaveBeenCalledWith(query, onSuccess, onError);
+    expect(order).toHaveBeenCalledWith(QUERY, onSuccess, onError);
   });
 });
 
 describe('task 4', () => {
   test('postOrder composes a request to the grocer using the defined callbacks', () => {
-    const variety = 'banana';
-    const quantity = 5;
+    let variety = 'banana';
+    let quantity = 5;
     postOrder(variety, quantity);
 
     expect(order).toHaveBeenCalledTimes(1);

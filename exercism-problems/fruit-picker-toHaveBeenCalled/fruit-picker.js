@@ -8,6 +8,8 @@
 // them in order to use it.
 //
 
+'use strict';
+
 // In your own projects, files, and code, you can play with @ts-check as well.
 import { notify } from './notifier';
 import { order } from './grocer';

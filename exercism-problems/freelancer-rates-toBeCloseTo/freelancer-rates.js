@@ -18,6 +18,7 @@
 // in idiomatic JavaScript, but some companies and style-guides do enforce them.
 //
 // Get those rates calculated!
+'use strict';
 
 /**
  * The day rate, given a rate per hour
@@ -49,11 +50,10 @@ export function daysInBudget(budget, ratePerHour) {
  * @returns {number} the rounded up discounted rate
  */
 export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-  let realPrice = ratePerHour * numDays * 8;
-  let months = Math.floor(numDays/22);
-  let amountForMonths = months * 22 * 8 * ratePerHour;
-  let discountedAmount = amountForMonths * discount;
-  let totalAmount = realPrice - discountedAmount;
-  let ceiledAmount = Math.ceil(totalAmount);
-  return ceiledAmount;
+  const REAL_PRICE = ratePerHour * numDays * 8;
+  const MONTHS = Math.floor(numDays/22);
+  const AMOUNT_FOR_MONTHS = MONTHS * 22 * 8 * ratePerHour;
+  const DISCOUNTED_AMOUNT = AMOUNT_FOR_MONTHS * discount;
+  const TOTAL_AMOUNT = REAL_PRICE - DISCOUNTED_AMOUNT;
+  return Math.ceil(TOTAL_AMOUNT);
 }

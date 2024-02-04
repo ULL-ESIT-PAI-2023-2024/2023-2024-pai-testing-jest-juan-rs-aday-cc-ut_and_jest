@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @desc Represents a simple bank account with basic operations.
  */
