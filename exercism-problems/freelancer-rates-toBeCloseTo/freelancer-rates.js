@@ -1,19 +1,3 @@
-/**
- * Universidad de La Laguna
- * Escuela Superior de Ingeniería y Tecnología
- * Grado en Ingeniería Informática
- * Programación de Aplicaciones Interactivas 2023-2024
- *
- * @author Aday Cuesta Correa
- * @alias alu0101483887
- * @since Feb 1 2024
- * @desc Freelancer Rates
- *       Learning Exercise of JavaScript.
- * 
- * @see {@link https://exercism.org/tracks/javascript/exercises/freelancer-rates}
- *
- */
-
 // @ts-check
 //
 // ☝🏽 The line above enables type checking for this file. Various IDEs interpret

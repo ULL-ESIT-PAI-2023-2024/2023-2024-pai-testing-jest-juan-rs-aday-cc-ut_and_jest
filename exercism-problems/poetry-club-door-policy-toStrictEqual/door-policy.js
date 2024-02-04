@@ -1,20 +1,3 @@
-/**
- * Universidad de La Laguna
- * Escuela Superior de Ingeniería y Tecnología
- * Grado en Ingeniería Informática
- * Programación de Aplicaciones Interactivas 2023-2024
- *
- * @author Aday Cuesta Correa
- * @alias alu0101483887
- * @since Feb 1 2024
- * @desc Poetry Club Door Policy
- *       Learning Exercise of JavaScript.
- * 
- * @see {@link https://exercism.org/tracks/javascript/exercises/poetry-club-door-policy}
- *
- */
-
-
 // @ts-check
 //
 // ☝🏽 The line above enables type checking for this file. Various IDEs interpret
@@ -37,9 +20,8 @@
 // Good luck with that door policy!
 
 /**
- * Respond with the correct character, given the line of the
+ * @desc Respond with the correct character, given the line of the
  * poem, if this were said at the front door.
- *
  * @param {string} line
  * @returns {string}
  */
@@ -48,9 +30,8 @@ export function frontDoorResponse(line) {
 }
 
 /**
- * Format the password for the front-door, given the response
+ * @desc Format the password for the front door, given the response
  * letters.
- *
  * @param {string} word the letters you responded with before
  * @returns {string} the front door password
  */
@@ -59,9 +40,8 @@ export function frontDoorPassword(word) {
 }
 
 /**
- * Respond with the correct character, given the line of the
+ * @desc Respond with the correct character, given the line of the
  * poem, if this were said at the back door.
- *
  * @param {string} line
  * @returns {string}
  */
@@ -70,9 +50,8 @@ export function backDoorResponse(line) {
 }
 
 /**
- * Format the password for the back door, given the response
+ * @desc Format the password for the back door, given the response
  * letters.
- *
  * @param {string} word the letters you responded with before
  * @returns {string} the back door password
  */
