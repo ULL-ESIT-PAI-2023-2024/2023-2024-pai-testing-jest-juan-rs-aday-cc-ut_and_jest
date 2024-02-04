@@ -1,0 +1,24 @@
+//
+// This is only a SKELETON file for the 'Pangram' exercise. It's been provided as a
+// convenience to get you started writing code faster.
+//
+
+/**
+ * @brief Returns true if the given sentence is a pangram.
+ * @param {string} sentence The sentence to check.
+ * @returns {boolean} True if the given sentence is a pangram.
+ */
+export const isPangram = (sentence) => {
+  const ALPHABET_SIZE = 26;
+  let letters = new Set();
+  for (const LETTER of sentence.toLowerCase()) {
+    if (LETTER.match(/[a-z]/)) {
+      letters.add(LETTER);
+    }
+  }
+  if (letters.size === ALPHABET_SIZE) {
+    return true;
+  } else {
+    return false;
+  }
+};
