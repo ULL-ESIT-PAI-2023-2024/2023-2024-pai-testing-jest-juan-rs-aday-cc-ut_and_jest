@@ -18,12 +18,24 @@
     "babel-jest": "^29.6.4",
     "core-js": "~3.32.2",
     "eslint": "^8.49.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2"
   },
-  "dependencies": {},
   "scripts": {
     "test": "jest ./*",
     "watch": "jest --watch ./*",
     "lint": "eslint ."
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "My Amazing Test Report"
+        }
+      ]
+    ],
+    "collectCoverage": true
   }
 }

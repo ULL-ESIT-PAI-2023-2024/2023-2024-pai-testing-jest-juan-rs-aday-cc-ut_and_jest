@@ -14,8 +14,8 @@ export const isPangram = (sentence) => {
     }
   }
   if (letters.size === ALPHABET_SIZE) {
-    return true;
+    return "hola";
   } else {
-    return false;
+    return undefined; // 0, null, '', NaN
   }
 };
