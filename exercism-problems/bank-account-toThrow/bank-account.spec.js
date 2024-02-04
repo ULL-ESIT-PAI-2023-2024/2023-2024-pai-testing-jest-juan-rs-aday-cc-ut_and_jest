@@ -1,4 +1,4 @@
-import { BankAccount, ValueError } from './bank-account';
+import { BankAccount, valueError } from './bank-account';
 
 describe('Bank Account', () => {
   test('newly opened account has zero balance', () => {
@@ -43,7 +43,7 @@ describe('Bank Account', () => {
     const account = new BankAccount();
     account.open();
     account.close();
-    expect(() => account.balance).toThrow(ValueError);
+    expect(() => account.balance).toThrow(valueError);
   });
 
   test('deposit into closed account throws error', () => {
@@ -52,7 +52,7 @@ describe('Bank Account', () => {
     account.close();
     expect(() => {
       account.deposit(50);
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('withdraw from closed account throws error', () => {
@@ -61,14 +61,14 @@ describe('Bank Account', () => {
     account.close();
     expect(() => {
       account.withdraw(50);
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('close already closed account throws error', () => {
     const account = new BankAccount();
     expect(() => {
       account.close();
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('open already opened account throws error', () => {
@@ -76,7 +76,7 @@ describe('Bank Account', () => {
     account.open();
     expect(() => {
       account.open();
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('reopened account does not retain balance', () => {
@@ -94,7 +94,7 @@ describe('Bank Account', () => {
     account.deposit(25);
     expect(() => {
       account.withdraw(50);
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('cannot withdraw negative amount', () => {
@@ -103,7 +103,7 @@ describe('Bank Account', () => {
     account.deposit(100);
     expect(() => {
       account.withdraw(-50);
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('cannot deposit negative amount', () => {
@@ -111,7 +111,7 @@ describe('Bank Account', () => {
     account.open();
     expect(() => {
       account.deposit(-50);
-    }).toThrow(ValueError);
+    }).toThrow(valueError);
   });
 
   test('changing balance directly throws error', () => {
